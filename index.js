@@ -4,7 +4,7 @@ import connect from './Db/Db.js';
 import Delete from './Model/Delete.model.js';
 import cors from 'cors';
 const app = express();
-app.use(cors({origin: 'http://localhost:3000','https://mama-frontend-theta.vercel.app'}));
+app.use(cors({origin: 'https://mama-frontend-theta.vercel.app'}));
 app.use(express.json());
 connect();
 app.get('/', (req, res) => {
