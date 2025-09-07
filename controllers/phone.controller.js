@@ -20,9 +20,17 @@ export const getAllPhones = async (req, res) => {
 
 export const getNeedToBuyPhones = async (req, res) => {
     try {
-        const phone = await Phone.find({ quantity: { $lt: 50 } });
+        const phone = await Phone.find({ quantity: { $lt: 5 } });
         res.status(200).json(phone);
     } catch (error) {
         res.status(500).json(error);
     }
 };
+export const updatePhone = async (req, res) => {
+    try {
+        const phone = await Phone.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        res.status(200).json(phone);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+}

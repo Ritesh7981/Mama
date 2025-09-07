@@ -7,7 +7,7 @@ import { authenticateToken, authorizeRole } from '../middleware/auth.js';
 
 const router = express.Router();
 
-router.post('/', authenticateToken, authorizeRole('admin'), createSellout);
+router.post('/', authenticateToken, createSellout);
 router.get('/', getAllSellouts);
 
 export default router;

@@ -2,7 +2,8 @@ import express from 'express';
 import { 
     createPhone, 
     getAllPhones, 
-    getNeedToBuyPhones 
+    getNeedToBuyPhones, 
+    updatePhone
 } from '../controllers/phone.controller.js';
 import { authenticateToken, authorizeRole } from '../middleware/auth.js';
 
@@ -11,5 +12,7 @@ const router = express.Router();
 router.post('/', authenticateToken, authorizeRole('admin'), createPhone);
 router.get('/', getAllPhones);
 router.get('/', getNeedToBuyPhones);
+router.put('/:id', updatePhone);
+
 
 export default router;
