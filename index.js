@@ -7,6 +7,9 @@ const app = express();
 app.use(cors({origin: 'http://localhost:3000'}));
 app.use(express.json());
 connect();
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+})
 app.post('/api/phone', async (req, res) => {
     try {
         const phone = await Phone.create(req.body);
