@@ -19,7 +19,7 @@ const deleteSchema = new mongoose.Schema({
     PhoneData: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Phone',
-    }
+    },
   
 }, {
     timestamps: true,
