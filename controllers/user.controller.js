@@ -13,7 +13,7 @@ export const registerUser = async (req, res) => {
         });
         const token = jwt.sign(
             { id: user._id, email: user.email, role: user.role },
-            process.env.JWT_SECRET,
+            "akV4y*hWOsdbfhhjbh",
             { expiresIn: process.env.JWT_EXPIRES_IN || '7d' }
         );
         res.status(200).json({ 
@@ -44,7 +44,7 @@ export const loginUser = async (req, res) => {
         
         const token = jwt.sign(
             { id: user._id, email: user.email, role: user.role },
-            process.env.JWT_SECRET,
+            "akV4y*hWOsdbfhhjbh",
             { expiresIn: process.env.JWT_EXPIRES_IN || '7d' }
         );
         
@@ -91,7 +91,7 @@ export const verifyToken = async (req, res) => {
         }
         
         const token = authHeader.split(" ")[1];
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const decoded = jwt.verify(token, "akV4y*hWOsdbfhhjbh");
         res.status(200).json({
             id: decoded.id,
             email: decoded.email,
